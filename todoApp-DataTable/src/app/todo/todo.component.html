@@ -1,0 +1,25 @@
+<!--<h1 align = "center">{{ title }}</h1>
+<div class="todoListInput">
+  <add-todo-modal></add-todo-modal>
+  <button class="btn btn-secondary btn-sm" [routerLink]="['']">All</button>
+  <button class="btn btn-secondary btn-sm" [routerLink]="['', 'done']">Done</button>
+  <button class="btn btn-secondary btn-sm" [routerLink]="['', 'undone']">To Do</button>
+  <router-outlet></router-outlet>
+</div>
+<ul align = "center" class = "list-group">
+  <li class="list-group-item" *ngFor="let todo of filteredArray" [class.done]="todo.isDone">
+    <div class="view">
+      <label>{{ todo.title }}</label>
+      <div class="btn-row">
+        <button type="button" class="btn btn-info btn-sm" [routerLink]="['todo-details',todo.id]">Details</button>
+        <button type="button" (click)=completeTodo(todo) class="btn btn-success btn-sm" *ngIf="!todo.isDone">Done</button>
+        <button type="button" (click)=reopenTodo(todo) class="btn btn-warning btn-sm" *ngIf="todo.isDone">Open</button>
+        <confirmation-modal></confirmation-modal>
+      </div>
+    </div>
+  </li>
+</ul>-->
+
+<div class="listTodo"><app-data-table-todo></app-data-table-todo></div>
+<div class="listDoing"><app-data-table-doing></app-data-table-doing></div>
+<div class="listDone"><app-data-table-done></app-data-table-done></div>
