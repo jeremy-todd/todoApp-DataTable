@@ -1,19 +1,33 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" align="center">
+<div class="tableFilterField">
+  <mat-form-field>
+    <input (keyup)="applyFilter($event.target.value)" matInput placeholder="filter">
+  </mat-form-field>
+</div>
+
+
+<table mat-table [dataSource]="dataSource" matSort multiTemplateDataRows class="mat-elevation-z8" align="center">
 
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
 
   <!-- Title Column -->
   <ng-container matColumnDef="title">
-    <th mat-header-cell *matHeaderCellDef> Todo </th>
+    <th mat-header-cell mat-sort-header *matHeaderCellDef> Todo </th>
     <td mat-cell *matCellDef="let element"> {{element.title}} </td>
   </ng-container>
 
   <!-- isDoing Column -->
   <ng-container matColumnDef="isDoing">
-    <th mat-header-cell *matHeaderCellDef>  </th>
-    <!--<td mat-cell *matCellDef="let element"> {{element.isDoing}} </td>-->
-    <td mat-cell *matCellDef="let element"> <button (click)=doingTodo(element) *ngIf="!element.isDoing">Doing</button> </td>
+    <th mat-header-cell mat-sort-header *matHeaderCellDef>  is Doing</th>
+    <td mat-cell *matCellDef="let element"> {{element.isDoing}} </td>
+    <!--<td mat-cell *matCellDef="let element"> <button (click)=doingTodo(element) *ngIf="!element.isDoing">Doing</button> </td>-->
+  </ng-container>
+
+  <!-- isDone Column -->
+  <ng-container matColumnDef="isDone">
+    <th mat-header-cell mat-sort-header *matHeaderCellDef>  isDone</th>
+    <td mat-cell *matCellDef="let element"> {{element.isDone}} </td>
+    <!--<td mat-cell *matCellDef="let element"> <button (click)=doingTodo(element) *ngIf="!element.isDoing">Doing</button> </td>-->
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

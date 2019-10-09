@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatTableModule } from '@angular/material';
+import { MatTableModule, MatInput } from '@angular/material';
+import { MatFormFieldModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
+import { MatSortModule } from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { TodoService } from './services/todo.service';
@@ -33,6 +36,9 @@ import { DataTableDoneComponent } from './data-table-done/data-table-done.compon
     AppRoutingModule,
     FormsModule,
     MatTableModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSortModule,
     BrowserAnimationsModule,
     NgbModule,
   ],
