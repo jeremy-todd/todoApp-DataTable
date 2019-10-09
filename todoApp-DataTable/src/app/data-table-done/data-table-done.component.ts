@@ -54,7 +54,7 @@ export class DataTableDoneComponent implements OnInit {
     this.todoService.reopenTodo(todo);
   }
 
-  getTodoItems() {
-    return this.todoService.todoList.filter(x => x.isDone === true);
+  get TodoItems() {
+    return this.todoService.todoList.filter(x => x.isDoing === false && x.isDone === true);
   }
 }
